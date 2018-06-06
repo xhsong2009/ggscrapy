@@ -17,11 +17,9 @@ class CaiTongZhengQuanSecutiesSpider(GGFundNavSpider):
     channel = '券商资管净值'
     allowed_domains = ['www.ctzg.com']
 
-    fps = [
-        {
+    fps = [{
             'url': 'http://www.ctzg.com/servlet/json?funcNo=904504&page=1&numPerPage=500&conditionArr=%25E5%2585%25A8%25E9%2583%25A8%252C%25E5%2585%25A8%25E9%2583%25A8%252C%25E5%2585%25A8%25E9%2583%25A8%252C%25E5%2585%25A8%25E9%2583%25A8%252C%25E5%2585%25A8%25E9%2583%25A8&jjjc=&sort=%25E5%258F%2591%25E5%25B8%2583%25E6%2597%25B6%25E9%2597%25B41',
-            'pg': 1}
-    ]
+            'pg': 1}]
 
     def parse_fund(self, response):
         funds = json.loads(response.text)['results'][0]['data']
